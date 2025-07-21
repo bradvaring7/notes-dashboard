@@ -44,25 +44,25 @@
       resetRegular();
     };
 
-    function resetAfterCall() {
-      document.getElementById("who").value = "Customer Name";
-      document.getElementById("what").value = "Issue description...";
-      document.getElementById("resolution").value = "Steps taken...";
-      document.getElementById("followup").value = "Next steps or 'None'";
-    }
+function resetAfterCall() {
+  document.getElementById("who").value = "";
+  document.getElementById("what").value = "";
+  document.getElementById("resolution").value = "";
+  document.getElementById("followup").value = "";
+}
 
-    function resetReservice() {
-      document.getElementById("res_what").value = "Reason for reservice...";
-      document.getElementById("res_where").value = "Property/location...";
-      document.getElementById("res_when").value = "Date and time...";
-      document.getElementById("res_howmany").value = "1";
-    }
+function resetReservice() {
+  document.getElementById("res_what").value = "";
+  document.getElementById("res_where").value = "";
+  document.getElementById("res_when").value = "";
+  document.getElementById("res_howmany").value = "";
+}
 
-    function resetRegular() {
-      document.getElementById("reason").value = "Scheduled for...";
-      document.getElementById("context").value = "Background info...";
-      document.getElementById("situation").value = "Current pest issues...";
-    }
+function resetRegular() {
+  document.getElementById("reason").value = "";
+  document.getElementById("context").value = "";
+  document.getElementById("situation").value = "";
+}
 
     async function copyAfterCall() {
       try {
