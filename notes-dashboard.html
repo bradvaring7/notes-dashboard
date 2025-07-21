@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Call Notes Dashboard</title>
+  <style>
+    body { font-family: Arial; padding: 10px; }
+    h3 { margin-top: 20px; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    textarea, input { width: 360px; padding: 6px; margin-top: 4px; }
+    button { margin-top: 10px; padding: 8px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h3>After Call Notes</h3>
+  <label for="who">Who?</label><input id="who" type="text">
+  <label for="what">What?</label><textarea id="what" rows="2"></textarea>
+  <label for="resolution">Resolution:</label><textarea id="resolution" rows="2"></textarea>
+  <label for="followup">Follow-up?</label><input id="followup" type="text">
+  <button onclick="copyAfterCall()">📋 Copy Call Notes</button>
+  <button onclick="resetAfterCall()">🔄 Reset</button>
+
+  <h3>Reservice Notes</h3>
+  <label for="res_what">What?</label><textarea id="res_what" rows="2"></textarea>
+  <label for="res_where">Where?</label><input id="res_where" type="text">
+  <label for="res_when">When?</label><input id="res_when" type="text">
+  <label for="res_howmany">How Many?</label><input id="res_howmany" type="text">
+  <button onclick="copyReservice()">📋 Copy Reservice Notes</button>
+  <button onclick="resetReservice()">🔄 Reset</button>
+
+  <h3>Regular Appt Notes</h3>
+  <label for="reason">Reason?</label><textarea id="reason" rows="2"></textarea>
+  <label for="context">Context:</label><textarea id="context" rows="2"></textarea>
+  <label for="situation">Pest Situation:</label><textarea id="situation" rows="2"></textarea>
+  <button onclick="copyRegular()">📋 Copy Appt Notes</button>
+  <button onclick="resetRegular()">🔄 Reset</button>
+
+  <script>
+    // Prefill templates
+    window.onload = function() {
+      resetAfterCall();
+      resetReservice();
+      resetRegular();
+    };
+
+    function resetAfterCall() {
+      document.getElementById("who").value = "Customer Name";
+      document.getElementById("what").value = "Issue description...";
+      document.getElementById("resolution").value = "Steps taken...";
+      document.getElementById("followup").value = "Next steps or 'None'";
+    }
+
+    function resetReservice() {
+      document.getElementById("res_what").value = "Reason for reservice...";
+      document.getElementById("res_where").value = "Property/location...";
+      document.getElementById("res_when").value = "Date and time...";
+      document.getElementById("res_howmany").value = "1";
+    }
+
+    function resetRegular() {
+      document.getElementById("reason").value = "Scheduled for...";
+      document.getElementById("context").value = "Background info...";
+      document.getElementById("situation").value = "Current pest issues...";
+    }
+
+    async function copyAfterCall() {
+      try {
+        const text = `Who? ${who.value}\nWhat? ${what.value}\nResolution: ${resolution.value}\nFollow-up?: ${followup.value}`;
+        await navigator.clipboard.writeText(text);
+        alert("📞 After Call Notes Copied!");
+      } catch (err) {
+        alert("❌ Copy failed. Check clipboard permissions.");
+      }
+    }
+
+    async function copyReservice() {
+      try {
+        const text = `What? ${res_what.value}\nWhere? ${res_where.value}\nWhen? ${res_when.value}\nHow Many? ${res_howmany.value}`;
+        await navigator.clipboard.writeText(text);
+        alert("🔧 Reservice Notes Copied!");
+      } catch (err) {
+        alert("❌ Copy failed. Check clipboard permissions.");
+      }
+    }
+
+    async function copyRegular() {
+      try {
+        const text = `Reason? ${reason.value}\nContext: ${context.value}\nPest Situation: ${situation.value}`;
+        await navigator.clipboard.writeText(text);
+        alert("📆 Appointment Notes Copied!");
+      } catch (err) {
+        alert("❌ Copy failed. Check clipboard permissions.");
+      }
+    }
+  </script>
+</body>
+</html>
