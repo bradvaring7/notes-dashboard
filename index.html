@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Call Notes Dashboard</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/bradvaring7/notes-dashboard/main/favicon.ico" type="image/x-icon">
+
   <style>
-    body { font-family: Arial; padding: 10px; }
-    h3 { margin-top: 20px; }
-    label { font-weight: bold; display: block; margin-top: 10px; }
-    textarea, input { width: 360px; padding: 6px; margin-top: 4px; }
-    button { margin-top: 10px; padding: 8px 12px; cursor: pointer; }
+    body { font-family: Arial, sans-serif; padding: 10px; max-width: 600px; }
+    h3 { margin-top: 24px; }
+    label { font-weight: bold; display: block; margin-top: 12px; }
+    textarea, input { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 10px; margin-right: 8px; padding: 8px 12px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -18,7 +20,7 @@
   <label for="what">What?</label><textarea id="what" rows="2"></textarea>
   <label for="resolution">Resolution:</label><textarea id="resolution" rows="2"></textarea>
   <label for="followup">Follow-up?</label><input id="followup" type="text">
-  <button onclick="copyAfterCall()">📋 Copy Call Notes</button>
+  <button onclick="copyAfterCall()">📋 Copy</button>
   <button onclick="resetAfterCall()">🔄 Reset</button>
 
   <h3>Reservice Notes</h3>
@@ -26,49 +28,45 @@
   <label for="res_where">Where?</label><input id="res_where" type="text">
   <label for="res_when">When?</label><input id="res_when" type="text">
   <label for="res_howmany">How Many?</label><input id="res_howmany" type="text">
-  <button onclick="copyReservice()">📋 Copy Reservice Notes</button>
+  <button onclick="copyReservice()">📋 Copy</button>
   <button onclick="resetReservice()">🔄 Reset</button>
 
   <h3>Regular Appt Notes</h3>
   <label for="reason">Reason?</label><textarea id="reason" rows="2"></textarea>
   <label for="context">Context:</label><textarea id="context" rows="2"></textarea>
   <label for="situation">Pest Situation:</label><textarea id="situation" rows="2"></textarea>
-  <button onclick="copyRegular()">📋 Copy Appt Notes</button>
+  <button onclick="copyRegular()">📋 Copy</button>
   <button onclick="resetRegular()">🔄 Reset</button>
 
   <script>
-    // Prefill templates
-    window.onload = function() {
-      resetAfterCall();
-      resetReservice();
-      resetRegular();
-    };
+    // Manual reset buttons
+    function resetAfterCall() {
+      who.value = "";
+      what.value = "";
+      resolution.value = "";
+      followup.value = "";
+    }
 
-function resetAfterCall() {
-  document.getElementById("who").value = "";
-  document.getElementById("what").value = "";
-  document.getElementById("resolution").value = "";
-  document.getElementById("followup").value = "";
-}
+    function resetReservice() {
+      res_what.value = "";
+      res_where.value = "";
+      res_when.value = "";
+      res_howmany.value = "";
+    }
 
-function resetReservice() {
-  document.getElementById("res_what").value = "";
-  document.getElementById("res_where").value = "";
-  document.getElementById("res_when").value = "";
-  document.getElementById("res_howmany").value = "";
-}
+    function resetRegular() {
+      reason.value = "";
+      context.value = "";
+      situation.value = "";
+    }
 
-function resetRegular() {
-  document.getElementById("reason").value = "";
-  document.getElementById("context").value = "";
-  document.getElementById("situation").value = "";
-}
-
+    // Copy + auto-clear
     async function copyAfterCall() {
       try {
         const text = `Who? ${who.value}\nWhat? ${what.value}\nResolution: ${resolution.value}\nFollow-up?: ${followup.value}`;
         await navigator.clipboard.writeText(text);
-        alert("📞 After Call Notes Copied!");
+        resetAfterCall();
+        alert("📞 After Call Notes Copied + Cleared!");
       } catch (err) {
         alert("❌ Copy failed. Check clipboard permissions.");
       }
@@ -78,7 +76,8 @@ function resetRegular() {
       try {
         const text = `What? ${res_what.value}\nWhere? ${res_where.value}\nWhen? ${res_when.value}\nHow Many? ${res_howmany.value}`;
         await navigator.clipboard.writeText(text);
-        alert("🔧 Reservice Notes Copied!");
+        resetReservice();
+        alert("🔧 Reservice Notes Copied + Cleared!");
       } catch (err) {
         alert("❌ Copy failed. Check clipboard permissions.");
       }
@@ -88,11 +87,13 @@ function resetRegular() {
       try {
         const text = `Reason? ${reason.value}\nContext: ${context.value}\nPest Situation: ${situation.value}`;
         await navigator.clipboard.writeText(text);
-        alert("📆 Appointment Notes Copied!");
+        resetRegular();
+        alert("📆 Appointment Notes Copied + Cleared!");
       } catch (err) {
         alert("❌ Copy failed. Check clipboard permissions.");
       }
     }
   </script>
+
 </body>
 </html>
