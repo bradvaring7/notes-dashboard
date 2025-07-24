@@ -1,0 +1,161 @@
+/* GLOBAL RESET AND TYPOGRAPHY */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+/* HEADER STYLING */
+header {
+  background: #008060;
+  color: white;
+  text-align: center;
+  padding: 1.5em 1em;
+  border-bottom: 5px solid #005a42;
+}
+header h1 {
+  font-size: 1.8em;
+}
+header p {
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+/* NAVIGATION BAR */
+nav {
+  background: #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-bottom: 2px solid #ddd;
+}
+nav a {
+  display: block;
+  padding: 0.75em 1em;
+  font-weight: bold;
+  color: #008060;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #d1f3e0;
+  border-radius: 4px;
+}
+
+/* SECTIONS */
+section {
+  padding: 1.5em 1em;
+  border-bottom: 1px solid #ddd;
+}
+.guaranteed {
+  background-color: #e6fff0;
+}
+.courtesy {
+  background-color: #fffbe6;
+}
+.excluded {
+  background-color: #ffe6e6;
+}
+.call-scripts {
+  background-color: #eef7ff;
+}
+.pest-lookup {
+  background-color: #f7f7f7;
+}
+
+/* CARD COMPONENTS */
+.script-card, .pest-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.pest-card h3, .script-card h3 {
+  margin-top: 0;
+}
+
+/* GRID FOR PEST LOOKUP */
+.pest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+#filter-tool {
+  background: #eef7ff;
+  padding: 1.5em;
+}
+#pestSearch {
+  padding: 0.5em;
+  width: 100%;
+  font-size: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.result-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.result-card strong::before {
+  content: "📎 ";
+  font-weight: normal;
+}
+.result-card h3 {
+  margin-top: 0;
+  color: #008060;
+}
+
+
+@media (max-width: 600px) {
+  .pest-grid {
+    grid-template-columns: 1fr;
+  }
+  #pestSearch {
+    font-size: 1em;
+  }
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+details[open] {
+  border-color: #008060;
+}
+#float-shortcuts {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  z-index: 1000;
+}
+.float-btn {
+  background: #008060;
+  color: white;
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.float-btn:hover {
+  background: #005a42;
+}

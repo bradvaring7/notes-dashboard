@@ -1,0 +1,17 @@
+🐛 Visual Icon Expansion (Emoji + SVG Option Ideas)
+While emojis provide instant recognition, pairing or replacing them with SVG icons can elevate visual clarity—especially on desktop dashboards.
+| Pest | Emoji | SVG/Icon Concept | 
+| Spiders | 🕷️ | Web + silhouette spider | 
+| Ants | 🐜 | Ant trail or top-down ant | 
+| Carpenter Bees | 🐝 | Bee + hole symbol | 
+| Lady Bugs | 🐞 | Spot-winged beetle outline | 
+| Cockroaches | 🪳 | Oval shell roach shape | 
+| Clover Mites | 🧫 | Tiny red dot or microscope icon | 
+| Snakes | 🐍 | Winding tail icon | 
+| Chiggers | 🦟 / 🧬 | Stylized mite or DNA strand | 
+| Beetles | 🪲 | Segment shell overlay | 
+| Flies | 🪰 | Winged silhouette | 
+| Pill Bugs | 🐌 / 🪱 | Curved roll-up bug symbol | 
+
+
+

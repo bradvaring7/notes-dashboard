@@ -1,0 +1,55 @@
+<section class="coverage-section pest-lookup">
+  <h2>🔍 Pest Lookup Grid</h2>
+  <p>Tap any pest icon to reveal coverage, trigger logic, and call phrasing. Icons indicate coverage status: 🟩 Guaranteed | 🟨 Courtesy | ❌ Excluded</p>
+
+  <div class="pest-grid">
+    <div class="pest-card guaranteed">
+      <h3>🕷️ Spiders</h3>
+      <p>🟩 Guaranteed | Treated automatically</p>
+      <p><em>Script:</em> “Spiders are part of our core coverage—we treat them proactively.”</p>
+    </div>
+
+    <div class="pest-card guaranteed">
+      <h3>🐜 Ants</h3>
+      <p>🟩 Guaranteed | All common types included</p>
+      <p><em>Script:</em> “Ants are included in our guarantee—we treat for them on every visit.”</p>
+    </div>
+
+    <div class="pest-card courtesy">
+      <h3>🧫 Clover Mites</h3>
+      <p>🟨 Courtesy | Treat only on request</p>
+      <p><em>Script:</em> “Clover mites fall into our courtesy list—we’re happy to treat them if requested.”</p>
+    </div>
+
+    <div class="pest-card courtesy">
+      <h3>🐝 Carpenter Bees</h3>
+      <p>🟨 Courtesy | ≤10 holes; request required</p>
+      <p><em>Script:</em> “We treat carpenter bees when requested—just flag it in the appointment note!”</p>
+    </div>
+
+    <div class="pest-card excluded">
+      <h3>🛏️ Bed Bugs</h3>
+      <p>❌ Not Covered | Refer out</p>
+      <p><em>Script:</em> “That pest isn’t part of our treatment program, but I’ll help you find the right solution.”</p>
+    </div>
+
+    <div class="pest-card courtesy">
+      <h3>🦟 Chiggers</h3>
+      <p>🟨 Courtesy | Treat on request, no long-term guarantee</p>
+      <p><em>Script:</em> “Chiggers aren’t guaranteed, but we’ll treat what we can see on request.”</p>
+    </div>
+
+    <div class="pest-card guaranteed">
+      <h3>🪳 Cockroach</h3>
+      <p>🟩 Guaranteed | <em>Excludes German roaches</em></p>
+      <p><em>Script:</em> “We cover cockroaches, except the German variety. For those, we refer out.”</p>
+    </div>
+
+    <!-- Add more pest-cards as needed... -->
+  </div>
+</section>
+
+- Use a CSS grid with responsive breakpoints for mobile vs. desktop.
+- Apply color-coded background blocks: green, yellow, red.
+- Add collapsible <details> or modals for expanded treatment notes, photos, or technician FAQs.
+- Optionally turn into a searchable JSON lookup tool with live filtering

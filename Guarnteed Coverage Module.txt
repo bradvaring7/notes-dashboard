@@ -1,0 +1,24 @@
+<section class="coverage-section guaranteed">
+  <h2>🟩 Guaranteed Coverage - Target Pests</h2>
+  <p>These pests are included in your Greenix subscription and treated proactively during quarterly visits.</p>
+  <ul class="pest-list">
+    <li><strong>🕷️ Spiders</strong> — Treated automatically</li>
+    <li><strong>🐜 Ants</strong> — All common species covered</li>
+    <li><strong>🦂 Wasps & Hornets</strong> — Includes Cicada Killers</li>
+    <li><strong>🪳 Cockroaches</strong> — <em>Excludes German Roaches</em></li>
+    <li><strong>🐞 Carpet Beetles</strong></li>
+    <li><strong>🦗 Crickets</strong></li>
+    <li><strong>🐛 Silverfish</strong></li>
+    <li><strong>🐌 Pill Bugs</strong></li>
+    <li><strong>🐛 Earwigs</strong></li>
+    <li><strong>🐍 Millipedes & Centipedes</strong></li>
+    <li><strong>🐜 Weevils</strong></li>
+  </ul>
+  <p class="script">🎯 <strong>Agent Script:</strong> “These pests are included in your guaranteed treatment—we handle them automatically as part of your regular service.”</p>
+</section>
+
+
+- Use CSS media queries to keep everything mobile-friendly (e.g. @media (max-width: 600px)).
+- Add collapsible <details> blocks for each pest type if you want visual toggles or educational blurbs.
+- Include quick badges like ✅ for guaranteed, ⚠️ for exclusions, or 🔎 links to Pest Library pages.
+- Consider theme blocks like target.css and courtesy.css to color-code visual zones.

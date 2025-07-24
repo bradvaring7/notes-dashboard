@@ -1,99 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Call Notes Dashboard</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/bradvaring7/notes-dashboard/main/favicon.ico" type="image/x-icon">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenix Pest Coverage Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    body { font-family: Arial, sans-serif; padding: 10px; max-width: 600px; }
-    h3 { margin-top: 24px; }
-    label { font-weight: bold; display: block; margin-top: 12px; }
-    textarea, input { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
-    button { margin-top: 10px; margin-right: 8px; padding: 8px 12px; cursor: pointer; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #008060; color: white; padding: 1.5em; text-align: center; }
+    nav { display: flex; justify-content: space-around; background: #eee; padding: 0.75em; flex-wrap: wrap; }
+    nav a { text-decoration: none; font-weight: bold; color: #008060; margin: 0.5em; }
+    section { padding: 1.5em; border-bottom: 1px solid #ddd; }
+    h2 { color: #008060; margin-top: 0.5em; }
+    .guaranteed { background: #e6fff0; }
+    .courtesy { background: #fffbe6; }
+    .excluded { background: #ffe6e6; }
+    .script-card, .pest-card, .result-card { background: white; border: 1px solid #ccc; padding: 1em; border-radius: 8px; margin-bottom: 1em; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .pest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1em; }
+    #pestSearch { padding: 0.5em; width: 100%; font-size: 1em; margin-bottom: 1em; border: 1px solid #ccc; border-radius: 5px; }
+    .library-link { display: inline-block; margin-top: 0.5em; padding: 0.4em 0.6em; background: #008060; color: white; text-decoration: none; border-radius: 5px; }
+    .library-link:hover { background: #005a42; }
+    @media (max-width: 600px) { nav { flex-direction: column; align-items: center; } }
   </style>
 </head>
+
 <body>
+  <header>
+    <h1>🧭 Greenix Pest Coverage Dashboard</h1>
+    <p>Fast, accurate answers for frontline agents</p>
+  </header>
 
-  <h3>After Call Notes</h3>
-  <label for="who">Who?</label><input id="who" type="text">
-  <label for="what">What?</label><textarea id="what" rows="2"></textarea>
-  <label for="resolution">Resolution:</label><textarea id="resolution" rows="2"></textarea>
-  <label for="followup">Follow-up?</label><input id="followup" type="text">
-  <button onclick="copyAfterCall()">📋 Copy</button>
-  <button onclick="resetAfterCall()">🔄 Reset</button>
+  <nav>
+    <a href="#guaranteed">✅ Guaranteed</a>
+    <a href="#courtesy">🛎️ Courtesy</a>
+    <a href="#scripts">💬 Scripts</a>
+    <a href="#lookup">🔍 Grid</a>
+    <a href="#search">🧪 Search</a>
+  </nav>
 
-  <h3>Reservice Notes</h3>
-  <label for="res_what">What?</label><textarea id="res_what" rows="2"></textarea>
-  <label for="res_where">Where?</label><input id="res_where" type="text">
-  <label for="res_when">When?</label><input id="res_when" type="text">
-  <label for="res_howmany">How Many?</label><input id="res_howmany" type="text">
-  <button onclick="copyReservice()">📋 Copy</button>
-  <button onclick="resetReservice()">🔄 Reset</button>
+  <main>
+    <!-- Module 1: Guaranteed Pests -->
+     <section id="hero" style="text-align:center; padding:2em 1em; background:#e6fff0;">
+  <h2 style="font-size:2em; color:#008060;">What’s Covered. What’s Not. No Guesswork.</h2>
+  <p style="font-size:1.2em; max-width:600px; margin:0 auto;">
+    Instantly look up pests, understand your coverage, and answer with confidence—no more second-guessing call phrasing or approval logic.
+  </p>
+</section>
+    <section id="guaranteed" class="guaranteed">
+      <h2>✅ Guaranteed Pests</h2>
+      <p>These are treated automatically during regular service. No request needed.</p>
+      <ul>
+        <li>🕷️ Spiders</li>
+        <li>🐜 Ants</li>
+        <li>🦗 Crickets</li>
+        <li>🐌 Pill Bugs</li>
+        <li>🪳 Cockroach (non-German)</li>
+      </ul>
+    </section>
 
-  <h3>Regular Appt Notes</h3>
-  <label for="reason">Reason?</label><textarea id="reason" rows="2"></textarea>
-  <label for="context">Context:</label><textarea id="context" rows="2"></textarea>
-  <label for="situation">Pest Situation:</label><textarea id="situation" rows="2"></textarea>
-  <button onclick="copyRegular()">📋 Copy</button>
-  <button onclick="resetRegular()">🔄 Reset</button>
+    <!-- Module 2: Courtesy Pests -->
+    <section id="courtesy" class="courtesy">
+      <h2>🛎️ Courtesy Pests</h2>
+      <p>Treated on request. No guarantee or residual protection.</p>
+      <ul>
+        <li>🦟 Chiggers</li>
+        <li>🧫 Clover Mites</li>
+        <li>🪰 Stink Bugs</li>
+        <li>🐞 Japanese Beetles</li>
+        <li>🐍 Snakes</li>
+        <li>🐝 Carpenter Bees</li>
+      </ul>
+    </section>
 
+    <!-- Module 3: Call Scripts -->
+<section id="scripts">
+  <h2>💬 Call Scripts</h2>
+  <details class="script-card">
+    <summary>✅ Guaranteed Pests</summary>
+    <p><strong>Script:</strong> “That’s one of our guaranteed pests! We automatically treat for it as part of your regular service.”</p>
+  </details>
+  <details class="script-card">
+    <summary>🛎️ Courtesy Pests</summary>
+    <p><strong>Script:</strong> “We absolutely treat those when requested! They fall under our courtesy list.”</p>
+  </details>
+  <details class="script-card">
+    <summary>❌ Not Covered</summary>
+    <p><strong>Script:</strong> “That pest isn’t part of our current program, but I’ll help connect you with the right resources.”</p>
+  </details>
+</section>
+
+    <!-- Module 4: Pest Lookup Grid -->
+    <section id="lookup">
+      <h2>🔍 Pest Lookup Grid</h2>
+      <div class="pest-grid">
+        <div class="pest-card guaranteed">
+          <h3>🕷️ Spiders</h3>
+          <p>🟩 Guaranteed | Treated automatically</p>
+          <p><strong>Script:</strong> Spiders are part of our core coverage—we treat them proactively.</p>
+          <a href="https://www.greenixpc.com/pest-library/spiders" target="_blank" rel="noopener" class="library-link">🔗 View in Pest Library</a>
+        </div>
+
+        <div class="pest-card courtesy">
+          <h3>🧫 Clover Mites</h3>
+          <p>🟨 Courtesy | Treat on request</p>
+          <p><strong>Script:</strong> Clover mites fall into our courtesy category—we’ll treat them when requested.</p>
+          <a href="https://www.greenixpc.com/pest-library/clover-mites" target="_blank" rel="noopener" class="library-link">🔗 View in Pest Library</a>
+        </div>
+
+        <div class="pest-card excluded">
+          <h3>🛏️ Bed Bugs</h3>
+          <p>❌ Not Covered | Refer out</p>
+          <p><strong>Script:</strong> Bed bugs aren’t part of our treatment program. We’ll guide you to the right support.</p>
+          <a href="https://www.greenixpc.com/pest-library/bed-bugs" target="_blank" rel="noopener" class="library-link">🔗 View in Pest Library</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 5: Pest Search Tool -->
+    <section id="search">
+      <h2>🧪 Pest Search Tool</h2>
+      <input type="text" id="pestSearch" placeholder="Type a pest name…" />
+      <div id="resultContainer"></div>
+    </section>
+  </main>
+
+  <!-- JS Includes -->
+  <script src="pest-data.js"></script>
   <script>
-    // Manual reset buttons
-    function resetAfterCall() {
-      who.value = "";
-      what.value = "";
-      resolution.value = "";
-      followup.value = "";
-    }
+    document.getElementById("pestSearch").addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+      const pest = pests[query];
+      const container = document.getElementById("resultContainer");
 
-    function resetReservice() {
-      res_what.value = "";
-      res_where.value = "";
-      res_when.value = "";
-      res_howmany.value = "";
-    }
-
-    function resetRegular() {
-      reason.value = "";
-      context.value = "";
-      situation.value = "";
-    }
-
-    // Copy + auto-clear
-    async function copyAfterCall() {
-      try {
-        const text = `Who? ${who.value}\nWhat? ${what.value}\nResolution: ${resolution.value}\nFollow-up?: ${followup.value}`;
-        await navigator.clipboard.writeText(text);
-        resetAfterCall();
-        alert("📞 After Call Notes Copied + Cleared!");
-      } catch (err) {
-        alert("❌ Copy failed. Check clipboard permissions.");
-      }
-    }
-
-    async function copyReservice() {
-      try {
-        const text = `What? ${res_what.value}\nWhere? ${res_where.value}\nWhen? ${res_when.value}\nHow Many? ${res_howmany.value}`;
-        await navigator.clipboard.writeText(text);
-        resetReservice();
-        alert("🔧 Reservice Notes Copied + Cleared!");
-      } catch (err) {
-        alert("❌ Copy failed. Check clipboard permissions.");
-      }
-    }
-
-    async function copyRegular() {
-      try {
-        const text = `Reason? ${reason.value}\nContext: ${context.value}\nPest Situation: ${situation.value}`;
-        await navigator.clipboard.writeText(text);
-        resetRegular();
-        alert("📆 Appointment Notes Copied + Cleared!");
-      } catch (err) {
-        alert("❌ Copy failed. Check clipboard permissions.");
-      }
-    }
+      container.innerHTML = pest
+        ? `<div class="result-card">
+            <h3>${query.charAt(0).toUpperCase() + query.slice(1)}</h3>
+            <p><strong>Category:</strong> ${pest.category}</p>
+            <p><strong>Script:</strong> ${pest.script}</p>
+            <p><strong>Notes:</strong> ${pest.notes}</p>
+            <a href="${pest.library_url}" target="_blank" rel="noopener" class="library-link">
+              🔗 View in Pest Library
+            </a>
+          </div>`
+        : query
+          ? `<p>No match found for "<strong>${query}</strong>". Try another name.</p>`
+          : "";
+    });
   </script>
-
+  <div id="float-shortcuts">
+  <a href="#search" class="float-btn">🧪 Search</a>
+  <a href="https://www.greenixpc.com/pest-library" class="float-btn" target="_blank" rel="noopener">🔗 Library</a>
+</div>
 </body>
 </html>

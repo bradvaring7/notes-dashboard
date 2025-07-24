@@ -1,0 +1,65 @@
+<section class="coverage-section call-scripts">
+  <h2>💬 Call Scripts - Handling Pest Coverage Questions</h2>
+
+  <article class="script-card">
+    <h3>🎯 When the Pest Is Covered (Target Pest)</h3>
+    <p><strong>Script:</strong> “That’s one of our guaranteed pests! We automatically treat for it as part of your regular service.”</p>
+    <p><em>Use for:</em> Spiders, Ants, Hornets, Carpet Beetles, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>🛎️ When It’s Courtesy Only (Not Guaranteed)</h3>
+    <p><strong>Script:</strong> “We absolutely help treat those pests when requested! They fall under our courtesy list, so while they’re not guaranteed, we use product that kills on contact during the visit.”</p>
+    <p><em>Use for:</em> Carpenter Bees, Clover Mites, Chiggers, Boxelder Bugs, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>⚠️ When the Pest Is NOT Treated (Excluded)</h3>
+    <p><strong>Script:</strong> “That pest isn’t part of our current treatment program, but I’ll help explore alternatives and get you connected with the right resources.”</p>
+    <p><em>Use for:</em> Fleas, Bed Bugs, German Roaches, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>📣 When They Reference Marketing (e.g. ‘We’ve Got You Covered’)</h3>
+    <p><strong>Script:</strong> “That tagline speaks to how many pests we cover, but treatment depends on whether the pest is part of our guaranteed list or our courtesy list. I can help clarify which group yours falls into.”</p>
+  </article>
+
+  <article class="script-card">
+    <h3>💡 When They’re Upset or Confused</h3>
+    <p><strong>Script:</strong> “I completely understand—coverage questions can be frustrating. Let me walk you through what’s guaranteed, what’s courtesy-based, and how we can best help right now.”</p>
+  </article>
+</section>
+
+<section class="coverage-section call-scripts">
+  <h2>💬 Call Scripts - Handling Pest Coverage Questions</h2>
+
+  <article class="script-card">
+    <h3>🎯 When the Pest Is Covered (Target Pest)</h3>
+    <p><strong>Script:</strong> “That’s one of our guaranteed pests! We automatically treat for it as part of your regular service.”</p>
+    <p><em>Use for:</em> Spiders, Ants, Hornets, Carpet Beetles, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>🛎️ When It’s Courtesy Only (Not Guaranteed)</h3>
+    <p><strong>Script:</strong> “We absolutely help treat those pests when requested! They fall under our courtesy list, so while they’re not guaranteed, we use product that kills on contact during the visit.”</p>
+    <p><em>Use for:</em> Carpenter Bees, Clover Mites, Chiggers, Boxelder Bugs, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>⚠️ When the Pest Is NOT Treated (Excluded)</h3>
+    <p><strong>Script:</strong> “That pest isn’t part of our current treatment program, but I’ll help explore alternatives and get you connected with the right resources.”</p>
+    <p><em>Use for:</em> Fleas, Bed Bugs, German Roaches, etc.</p>
+  </article>
+
+  <article class="script-card">
+    <h3>📣 When They Reference Marketing (e.g. ‘We’ve Got You Covered’)</h3>
+    <p><strong>Script:</strong> “That tagline speaks to how many pests we cover, but treatment depends on whether the pest is part of our guaranteed list or our courtesy list. I can help clarify which group yours falls into.”</p>
+  </article>
+
+  <article class="script-card">
+    <h3>💡 When They’re Upset or Confused</h3>
+    <p><strong>Script:</strong> “I completely understand—coverage questions can be frustrating. Let me walk you through what’s guaranteed, what’s courtesy-based, and how we can best help right now.”</p>
+  </article>
+</section>
+
+- You can add buttons like “Copy to Clipboard” beside each script block or render them as <details> tags to collapse/expand on mobile.

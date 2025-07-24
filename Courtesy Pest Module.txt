@@ -1,0 +1,25 @@
+<section class="coverage-section courtesy">
+  <h2>🟨 Courtesy Pests - Treatable on Request</h2>
+  <p>These pests are not covered by our guarantee, but can be treated upon customer request. Always document communication in appointment notes or yellow notes.</p>
+  <ul class="pest-list courtesy-list">
+    <li><strong>🐍 Snakes</strong> — Treat upon request; no residual guarantee</li>
+    <li><strong>🐝 Carpenter Bees (≤10 holes)</strong> — Request-based; add note for tech</li>
+    <li><strong>🐞 Lady Bugs</strong></li>
+    <li><strong>🪳 Boxelder Bugs</strong></li>
+    <li><strong>🪰 Stink Bugs</strong></li>
+    <li><strong>🦟 Chiggers</strong></li>
+    <li><strong>🧫 Clover Mites</strong></li>
+    <li><strong>🐜 Springtails</strong></li>
+    <li><strong>🦟 Gnats</strong></li>
+    <li><strong>🪰 Flies (All Types)</strong></li>
+    <li><strong>🪲 Japanese Beetles</strong></li>
+    <li><strong>🐞 Misc. Beetles</strong> — Some treatable; defer to Service Pro recommendation</li>
+  </ul>
+  <p class="script">🗣️ <strong>Agent Script:</strong> “We can absolutely treat those pests when requested! They fall under our courtesy category, which means they aren’t covered by guarantee, but we do help with kill-on-contact treatment.”</p>
+</section>
+
+- Use yellow-themed visual block with hover-over effects for mobile
+- Add collapsible <details> for pest-specific notes or exceptions
+- Integrate a “⏺ Add Note to Appointment” button if you link this to any scheduling tool
+
+
